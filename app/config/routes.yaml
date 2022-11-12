@@ -9,3 +9,7 @@ login:
 articles:
     path: /articles
     controller: App\Controller\ArticlesController::index
+
+logout:
+    path: /logout
+    methods: GET

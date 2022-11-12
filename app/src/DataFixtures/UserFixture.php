@@ -20,10 +20,10 @@ class UserFixture extends Fixture
     public function load(ObjectManager $manager): void
     {
         // create administrator
-        $manager->persist($this->getUser("admin@test.gmail.com", "test", Roles::ROLE_ADMINISTRATOR));
+        $manager->persist($this->getUser("admin@gmail.com", "test", 'ROLE_ADMINISTRATOR'));
 
         // create moderator
-        $manager->persist($this->getUser("moder@test.gmail.com", "test", Roles::ROLE_MODERATOR));
+        $manager->persist($this->getUser("moder@gmail.com", "test", 'ROLE_MODERATOR'));
 
         $manager->flush();
     }

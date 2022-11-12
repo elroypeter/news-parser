@@ -20,7 +20,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, unique=true)
      */
     private $email;
 
@@ -56,6 +56,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->password;
     }
 
+    public function getUserIdentifier(): string
+    {
+        return (string) $this->email;
+    }
+
     public function getUsername(): ?string
     {
         return $this->email;
@@ -63,7 +68,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function getRoles()
     {
-        return [$this->role];
+        $roles = [$this->role];
+        return $roles;
     }
 
     public function setPassword(string $password): self
