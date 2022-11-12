@@ -1,0 +1,11 @@
+index:
+    path: /
+    controller: App\Controller\LoginController::index
+
+login:
+    path: /login
+    controller: App\Controller\LoginController::index
+
+articles:
+    path: /articles
+    controller: App\Controller\ArticlesController::index
