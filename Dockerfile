@@ -18,3 +18,4 @@ RUN mv /root/.symfony5/bin/symfony /usr/local/bin/symfony
 RUN git config --global user.email "my@projects@67" \ 
     && git config --global user.name "davis67"
 
+
