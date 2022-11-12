@@ -10,6 +10,10 @@ articles:
     path: /articles
     controller: App\Controller\ArticlesController::index
 
+send_message:
+    path: /send-message
+    controller: App\Controller\SendNotificationController::sendMessage
+
 logout:
     path: /logout
     methods: GET
