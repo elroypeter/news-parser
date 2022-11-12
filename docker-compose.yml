@@ -4,6 +4,7 @@ services:
     db:
         container_name: mysqldb
         image: mysql:latest
+        restart: unless-stopped
         environment:
             - MYSQL_PASSWORD=test
             - MYSQL_DATABASE=news_db
@@ -18,6 +19,7 @@ services:
         container_name: php
         build:
             context: .
+        restart: unless-stopped
         ports:
             - "9000:9000"
         volumes:
@@ -28,6 +30,7 @@ services:
     nginx:
         container_name: nginx
         image: nginx:stable-alpine
+        restart: unless-stopped
         ports:
             - "8080:80"
         volumes:
