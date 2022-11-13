@@ -35,6 +35,11 @@ Add users
 $ docker-compose exec php symfony console doctrine:fixtures:load
 ```
 
+Start the queue worker
+```shell
+$ docker-compose exec php symfony console messenger:consume async
+```
+
 You are good to go !!
 
 ### Access to the running server:

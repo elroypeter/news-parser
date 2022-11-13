@@ -1,18 +1,25 @@
 index:
     path: /
+    methods: GET
     controller: App\Controller\LoginController::index
 
 login:
     path: /login
     controller: App\Controller\LoginController::index
 
-articles:
-    path: /articles
-    controller: App\Controller\ArticlesController::index
-
 send_message:
     path: /send-message
-    controller: App\Controller\SendNotificationController::sendMessage
+    controller: App\Controller\NewsParserController::sendMessage
+
+all_articles:
+    path: /articles
+    methods: GET
+    controller: App\Controller\ArticlesController::index
+
+delete_article:
+    path: /articles
+    methods: POST
+    controller: App\Controller\ArticlesController::deleteArticle
 
 logout:
     path: /logout

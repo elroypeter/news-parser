@@ -30,6 +30,7 @@ services:
     rabbitmq:
         container_name: rabbitmq
         image: rabbitmq:3-management
+        restart: unless-stopped
         environment:
             - RABBIT_MQ_DEFAULT_USER=guest
             - RABBIT_MQ_DEFAULT_PASS=guest
